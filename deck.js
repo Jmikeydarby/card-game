@@ -1,7 +1,6 @@
 class Deck {
 	constructor(){
 		this.deck = [];
-		this.topCard = 0;
 
 		this.makeDeck();
 
@@ -31,13 +30,23 @@ class Deck {
 			}
 		}
 
-		this.deck = newDeck;
+		newDeck.forEach(card =>{
+			this.deck.push(card)
+		})
+		// this.deck.push(newDeck);
 	}
 
 	drawCard(numOfDraws) {
-		this.topCard+=numOfDraws;
 		return this.deck.splice(0, numOfDraws);
 	}
+
+	addDeck(numOfDecks) {
+		for(var i = 0; i < numOfDecks; i++){
+			this.makeDeck();
+		}
+	}
+
+
 
 }
 

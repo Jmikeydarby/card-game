@@ -26,10 +26,20 @@ describe('Deck', () => {
 	it('draws cards from the top of the deck and removes them from the deck', () =>{
 		let drawnCards = newDeck.drawCard(3);
 		expect(newDeck.deck).to.have.lengthOf(49);
-		expect(newDeck.topCard).to.eql(3);
 		expect(drawnCards).to.eql(['Ace of Hearts', 'Two of Hearts', 'Three of Hearts']);
 		assert.equal(newDeck.deck[0], 'Four of Hearts');
 		
+	});
+
+	it('can add multiple decks and shuffle them as well', () => {
+		expect(newDeck.deck).to.have.lengthOf(52);
+		newDeck.addDeck(1);
+		expect(newDeck.deck).to.have.lengthOf(104);
+		newDeck.drawCard(5)
+		newDeck.addDeck(1);
+		expect(newDeck.deck).to.have.lengthOf(151);
+		newDeck.shuffleDeck();
+		expect(newDeck.deck).to.have.lengthOf(151);
 	})
 
 
