@@ -4,7 +4,7 @@
   "description": "A test to making a functional card game",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha -w"
   },
   "author": "Joey Darbyshire",
   "license": "ISC",
