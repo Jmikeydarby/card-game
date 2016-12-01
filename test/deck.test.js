@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const assert = require('chai').assert;
-const Deck = require('../deck');
+const Deck = require('../app/deck');
 
 describe('Deck', () => {
 	let newDeck;

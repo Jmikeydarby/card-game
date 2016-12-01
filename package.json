@@ -4,12 +4,16 @@
   "description": "A test to making a functional card game",
   "main": "app.js",
   "scripts": {
-    "test": "mocha -w"
+    "test": "mocha -w",
+    "start": "node ./app/index.js"
   },
   "author": "Joey Darbyshire",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "inquirer": "^1.2.3"
   }
 }
