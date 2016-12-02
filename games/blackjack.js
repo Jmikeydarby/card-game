@@ -1,1 +1,1 @@
-const deck = require('../deck');
+const deck = require('../app/deck');
