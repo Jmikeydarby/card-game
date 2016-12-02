@@ -1,6 +1,9 @@
 const Games = require('../games');
+const path = require('path');
 const Deck = require('./deck');
 const inquirer = require('inquirer');
+// const Promise = require('bluebird');
+// const fs = Promise.promisifyAll(require('fs'));
 
 let playing = true;
 
@@ -16,13 +19,14 @@ function newGame(playAgain) {
 	// 	choices:
 	// }])
 
-	fs.readdir('../games', (err, files) => {
-		if (err) {
-			throw new Error(err);
-		}
-		console.log(files);
-		newGame(false);
-	})
+	console.log(fs.readdirSync( __dirname + '../games'));
+		// .then(files => {
+		// 	console.log(files);
+		// 	newGame(false);
+		// })
+		// .catch(err => {
+		// 	throw new Error(err);
+		// })
 
 
 
@@ -30,6 +34,4 @@ function newGame(playAgain) {
 }
 
 newGame(playing)
-.then(function(){
-	console.log('Thanks for playing!');
-})
+console.log('Thanks for playing!');
