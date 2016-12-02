@@ -7,7 +7,6 @@ function gameSelection () {
 		}
 		console.log(files);
 
-
 	})
 }
 
