@@ -3,6 +3,7 @@ const path = require('path');
 const Deck = require('./deck');
 const inquirer = require('inquirer');
 const Promise = require('bluebird');
+const gameSelection = require('gameSelection');
 const fs = Promise.promisifyAll(require('fs'), {suffix: "Promise"});
 
 let playing = true;
