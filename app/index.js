@@ -1,9 +1,8 @@
 const blackjack = require('../games/blackjack');
 const path = require('path');
 const Deck = require('./deck');
-const inquirer = require('inquirer');
 const Promise = require('bluebird');
-const gameSelection = require('gameSelection');
+const gameSelection = require('./gameSelection');
 const fs = Promise.promisifyAll(require('fs'), {suffix: "Promise"});
 
 let playing = true;
@@ -20,13 +19,9 @@ function newGame(playAgain) {
 	// 	choices:
 	// }])
 
-	return fs.readdirPromise( __dirname + '/../games')
-		.then(files => {
-			console.log(files);
-			return newGame(false);
-		})
-		.catch(err => {
-			throw new Error(err);
+	return gameSelection()
+		.then(() => {
+			newGame(false);
 		})
 
 
