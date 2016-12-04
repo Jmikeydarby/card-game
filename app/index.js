@@ -9,7 +9,7 @@ let playing = true;
 
 function newGame(playAgain) {
 	if (playAgain === false){
-		return Promise.resolve()
+		return Promise.resolve();
 	}
 
 	// return inquirer.prompt([{
@@ -21,7 +21,10 @@ function newGame(playAgain) {
 
 	return gameSelection()
 		.then(() => {
-			newGame(false);
+			return newGame(false);
+		})
+		.catch(err => {
+			throw new Error(err);
 		})
 
 
@@ -32,4 +35,7 @@ function newGame(playAgain) {
 newGame(playing)
 .then(() =>{
 	console.log('Thanks for playing!')
+})
+.catch( err => {
+	console.error(err);
 });

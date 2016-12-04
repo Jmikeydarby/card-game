@@ -4,7 +4,7 @@ class Deck {
 
 		this.makeDeck();
 
-		
+
 	}
 
 
@@ -18,6 +18,10 @@ class Deck {
 			this.deck[currentIndex] = this.deck[randomCard];
 			this.deck[randomCard] = tempCard;
 		}
+	}
+
+	resetDeck() {
+		this.deck = [];
 	}
 
 	makeDeck() {

@@ -18,7 +18,10 @@ function gameSelection () {
 			}])
 		})
 		.then(game => {
-			gamePlay(game.gameSelection);
+			return Promise.promisify(gamePlay(game.gameSelection));
+		})
+		.then(gameToPlay => {
+			return gameToPlay();
 		})
 		.catch(err => {
 			throw new Error(err);
