@@ -4,6 +4,7 @@ const Deck = require('./deck');
 const Promise = require('bluebird');
 const gameSelection = require('./gameSelection');
 const fs = Promise.promisifyAll(require('fs'), {suffix: "Promise"});
+const inquirer = require('inquirer');
 
 let playing = true;
 
@@ -21,7 +22,15 @@ function newGame(playAgain) {
 
 	return gameSelection()
 		.then(() => {
-			return newGame(false);
+			return inquirer.prompt([{
+				type: 'list',
+				name: 'playAgain',
+				message: 'Would you like to play a different card game?',
+				choices: ['yes', 'no']
+			}])
+			.then( choice => {
+				return choice.playAgain === 'yes' ? newGame(true) : newGame(false);
+			})
 		})
 		.catch(err => {
 			throw new Error(err);

@@ -5,7 +5,8 @@ function gamePlay (gameName) {
   switch (gameName.toLowerCase()) {
     case 'blackjack': {
       const blackjack = require(`${games}/blackjack`);
-      return blackjack;
+      const game = new blackjack;
+      return game.play();
     }
   }
 

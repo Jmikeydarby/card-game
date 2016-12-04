@@ -7,7 +7,6 @@ class blackjack extends Deck {
     this.addDeck(3);
     this.shuffleDeck();
     console.log('Welcome to Blackjack!');
-    this.play();
   }
 
   deal () {
@@ -36,8 +35,4 @@ class blackjack extends Deck {
   }
 }
 
-function startBlackjack () {
-  return new blackjack();
-}
-
-module.exports = startBlackjack;
+module.exports = blackjack;
