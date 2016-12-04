@@ -4,9 +4,9 @@ const games = '../games';
 function gamePlay (gameName) {
   switch (gameName.toLowerCase()) {
     case 'blackjack': {
-      const blackjack = require(`${games}/blackjack`);
-      const game = new blackjack;
-      return game.play();
+      const Blackjack = require(`${games}/blackjack`);
+      const Game = new Blackjack;
+      return Game.play();
     }
   }
 

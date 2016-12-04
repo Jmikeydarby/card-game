@@ -37,7 +37,6 @@ class Deck {
 		newDeck.forEach(card =>{
 			this.deck.push(card)
 		})
-		// this.deck.push(newDeck);
 	}
 
 	drawCard(numOfDraws) {
